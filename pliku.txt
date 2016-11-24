@@ -1,0 +1,2 @@
+gracz 0: 0 pkt
+gracz 1: 0 pkt
