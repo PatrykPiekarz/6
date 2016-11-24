@@ -27,8 +27,8 @@ f1.seek(0)
 haslo=random.choice(hasla)
 haslo=str(haslo)
 k=0
-
-while 1==1:
+exit=1
+while exit==1:
     if k==0:
         print "losoje nowe haslo"
         haslo=random.choice(hasla)
@@ -62,12 +62,16 @@ while 1==1:
                 i.pkt*=dlg
                 print "gracz %i ma w sumie %i punktow" % (i.id,i.pkt)
                 print "zapisuje wyniki do pliku txt"
+                f2.seek(0)
                 for j in lst:
-                    print "gracz %i: %i pkt\n" % (j.id,j.pkt)
                     f2.write(("gracz %i: %i pkt\n") % (j.id,j.pkt))
 
-                f2.close()
-                print "koncze gre"
+                f2.flush()
+                k=0
+                c=raw_input("grac dalej y/n?")
+                c=str(c)
+                if c=='n':
+                    exit=0
                 break
         else:
             if c=='n':
